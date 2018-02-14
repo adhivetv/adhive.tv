@@ -4,10 +4,10 @@
 
 <ul>
 <li><a href="#background">Background</a></li>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/RabbitMQ/REDME.md">RabbitMQ</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/COMPFRAMEWORK/REDME.md">COMPFRAMEWORK</a> 
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/SMART-SENDER/REDME.md">SMART-SENDER</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/ai/REDME.md">AI</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/RabbitMQ/README.md">RabbitMQ</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/COMPFRAMEWORK/README.md">COMPFRAMEWORK</a> 
+<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/SMART-SENDER/README.md">SMART-SENDER</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/ai/README.md">AI</a>
 <ul>
 </ul>
 
