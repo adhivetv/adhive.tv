@@ -2,16 +2,18 @@
 <h1>SMART</h1>
 
 <ul>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/">Background</a></li>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/RabbitMQ/README.md">RabbitMQ</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/COMPFRAMEWORK/README.md">COMPFRAMEWORK</a> 
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/SMART-SENDER/README.md">SMART-SENDER</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/ai/README.md">AI</a>
+<li><a href="https://github.com/adhivetv/adhive.tv">Background</a></li>
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/RabbitMQ">RabbitMQ</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/COMPFRAMEWORK">COMPFRAMEWORK</a> 
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/SMART-SENDER">SMART-SENDER</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/ai">AI</a>
 <ul>
 </ul>
 
 <p>Smart is the lowest-level block of the described system. It combines various algorithms for recognizing video and audio objects using the neural networks Convolution and Reccucent Neural Networks.</p>
 <p>The Smart block consists of the main control program and modules executed as dynamically uploaded libraries.</p>
+
+<img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/smart.png"/>
 
 <p>Each module has its own configuration file and is equipped with a standard interface. Thus, in order to change the module or make a new one, there is no need to introduce changes to the Smart itself, since the modules to be loaded are added directly to the management file.</p>
 
@@ -36,6 +38,7 @@
 <p>- After receiving the command for processing, Smart adds the request to the queue of the desired module.</p>
 <p>- Next, integration is carried out with the external service, all under the control of Load Balancing. It is then determined which of the SMART modules is ready to process the command at the moment.</p>
 
+<img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/smart.png"/>
 
 <p>Smart is executed in 3 main streams:</p>
 <li><p>Http - server</p></li>
