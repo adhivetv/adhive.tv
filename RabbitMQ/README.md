@@ -3,11 +3,11 @@
 <h1>RabbitMQ</h1>
 
 <ul>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/">Background</a></li>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/RabbitMQ/README.md">RabbitMQ</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/COMPFRAMEWORK/README.md">COMPFRAMEWORK</a> 
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/SMART-SENDER/README.md">SMART-SENDER</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/blob/master/ai/README.md">AI</a>
+<li><a href="https://github.com/adhivetv/adhive.tv">Background</a></li>
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/RabbitMQ">RabbitMQ</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/COMPFRAMEWORK">COMPFRAMEWORK</a> 
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/SMART-SENDER">SMART-SENDER</a>
+<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/ai">AI</a>
 <ul>
 </ul>
   
