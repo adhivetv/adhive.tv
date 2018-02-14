@@ -21,4 +21,4 @@ AdHive has developed a distributed multi-layered AI cluster architecture. The de
 
 Let us look through the components of the AI ​​cluster architecture and briefly examine the functions each block is responsible for.
 
-<img align="right" src="http://eos.io/wpimg/diagram3.png" width="228.395px" height="300px" />
+<img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/architecture.png" />
