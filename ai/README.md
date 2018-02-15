@@ -9,7 +9,6 @@
  <li><a href="#Module">Module</a>
  <li><a href="#AI cluster - brief workflow description">AI cluster - brief workflow description</a>
  <li><a href="#How SMART works">How SMART works</a>
-<ul>
 </ul>
  
 <a name="Distributed Multi-Layered AI Cluster Architecture"></a><h1>Distributed Multi-Layered AI Cluster Architecture</h1>
@@ -41,9 +40,8 @@
 <p>This module guarantees the following processes:</p>
 
 <ul>
-<li>Delivering tasks to smart from the compframework</li>
+<li>Delivering tasks to smart from the compframework
 <li>Receiving a response from a smart and transferring it to a compframework
-<ul>
 </ul>
   
 <p>Smart Sender interacts with Redis to save an optimized state. In addition, this module uses RabbitMQ as an intermediary between it and the compframework.</p>
