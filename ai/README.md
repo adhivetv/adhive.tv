@@ -1,15 +1,18 @@
 # adhive.tv
 
 <ul>
-<li><a href="https://github.com/adhivetv/adhive.tv">Background</a></li>(#Background)
-<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/RabbitMQ">RabbitMQ</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/COMPFRAMEWORK">COMPFRAMEWORK</a> 
-<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/SMART-SENDER">SMART-SENDER</a>
-<li><a href="https://github.com/adhivetv/adhive.tv/tree/master/ai">AI</a>
+ <li><a href="#Distributed Multi-Layered AI Cluster Architecture">Distributed Multi-Layered AI Cluster Architecture</a>
+ <li><a href="#RabbitMQ">RabbitMQ</a>
+ <li><a href="#COMPFRAMEWORK">COMPFRAMEWORK</a> 
+ <li><a href="#SMART-SENDER">SMART-SENDER</a>
+ <li><a href="#SMART">SMART</a>
+ <li><a href="#Module">Module</a>
+ <li><a href="#AI cluster - brief workflow description">AI cluster - brief workflow description</a>
+ <li><a href="How SMART works">How SMART works</a>
 <ul>
 </ul>
  
-<a name="Background"></a><h1>Distributed Multi-Layered AI Cluster Architecture</h1>
+<a name="Distributed Multi-Layered AI Cluster Architecture"></a><h1>Distributed Multi-Layered AI Cluster Architecture</h1>
  
 <p>The market has been plagued by various issues related to correct identification and placement of content. The main problem at the moment is video and photo file recognition from various internet sources without losing data components.</p>
  
@@ -23,17 +26,17 @@
 
 <img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/architecture.png"/>
 
-<h1>RabbitMQ</h1>
+<a name="RabbitMQ"></a><h1>RabbitMQ</h1>
 
 <p>RabbitMQ, otherwise known as a message queue. This unit is responsible for receiving commands for their subsequent execution (recognition, downloading of content, etc.) and storing them until the transfer of received commands to the next service.</p>
  
-<h1>COMPFRAMEWORK = Computation Framework</h1>
+<a name="COMPFRAMEWORK"></a><h1>COMPFRAMEWORK = Computation Framework</h1>
  
 <p>The Compframework module is an analogy of the Computation Framework. To see the concept of the Computation Framework, please follow the given link <a href="http://scorch.ai/Technology/computation-framework/">http://scorch.ai/Technology/computation-framework/</a></p>
 
 <p>The given architecture component is responsible for preparing and downloading data for other recognition levels, controlling the interaction and transmission of data by levels, data integration processes with input-output sources, and data conversion for output formats. In our case, the module integrates with RabbitMQ.</p>
 
-<h1>SMART-SENDER</h1>
+<a name="SMART-SENDER"></a><h1>SMART-SENDER</h1>
 
 <p>This module guarantees the following processes:</p>
 
@@ -47,20 +50,20 @@
 <p>The smart module and the compframework module communicate via the http protocol. Compframework is installed together with smart locally on one device according to the following principle - one smart-sender module per smart module.
 </p>
  
-<h1>SMART</h1>
+<a name="SMART"></a><h1>SMART</h1>
 
 <p>Smart is the lowest-level block of the described system. It combines various algorithms for recognizing video and audio objects using the neural networks Convolution and Reccucent Neural Networks.</p>
 <p>The Smart block consists of the main control program and modules executed as dynamically uploaded libraries.</p>
 
 <img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/smart.png"/>
 
-<h1>Module = algorithm</h1>
+<a name="Module"></a><h1>Module = algorithm</h1>
 
 <p>Each module has its own configuration file and is equipped with a standard interface. Thus, in order to change the module or make a new one, there is no need to introduce changes to the Smart itself, since the modules to be loaded are added directly to the management file.</p>
 
 <p>Modules in SMART are algorithms for processing video, audio or text data. Each separate module is a dynamically loaded library with a standard interface.</p>
 
-<h2>AI cluster - brief workflow description</h2>
+<a name="AI cluster - brief workflow description"></a><h1>AI cluster - brief workflow description</h1>
 
 <li><p>From an external service, a command is sent to the MQ message queue to process video or photos.</p></li>
 <li><p>Next, the command enters the Computation Framework. The data is downloaded and converted to the required format, and transferred to the next level of processing.</p></li>
@@ -68,7 +71,7 @@
 <li><p>If at any stage of the SMART or Computation Framework, the modules did not express readiness to accept the command for processing, the command is transferred to a neighboring server, and this is done by Load Balancing.</p></li>
 <li><p>The received responses about the processing courses arrive at the Computation Framework, where they are packaged and sent back to the external service that requested the processing.</p></li>
 
-<h2>How SMART works:</h2>
+<a name="How SMART works"></a><h1>How SMART works:</h1>
 
 <p>In the current implementation, the module can recognize photo, video or audio data by various algorithms to select the module configurator.</p>
 
@@ -92,4 +95,3 @@
 <p><b>Module = Neural network.</b> Thus, the module is a neural network implementation, which has the form of an uploadable library with a standard interface. The structure of the module provides convenience and efficiency in updating the neural network.</p>
 
 <p>The process of adding is as follows - the module is loaded into the necessary directory on the server and its parameters are added to the configuration file. After that, the Smart reboots, and is loaded with the updated neural network.</p>
-
