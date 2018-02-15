@@ -67,7 +67,7 @@
 <li><p>From an external service, a command is sent to the MQ message queue to process video or photos.</p>
 <li><p>Next, the command enters the Computation Framework. The data is downloaded and converted to the required format, and transferred to the next level of processing.</p>
 <li><p>Ultimately, through the MQ, the command arrives at the SMART module, where images and sounds are recognized.</p>
-<li><p>If at any stage of the SMART or Computation Framework, the modules did not express readiness to accept the command for processing, the command is transferred to a neighboring server, and this is done by Load Balancing.</p><
+<li><p>If at any stage of the SMART or Computation Framework, the modules did not express readiness to accept the command for processing, the command is transferred to a neighboring server, and this is done by Load Balancing.</p>
 <li><p>The received responses about the processing courses arrive at the Computation Framework, where they are packaged and sent back to the external service that requested the processing.</p>
 </ul>
 
