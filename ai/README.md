@@ -8,7 +8,7 @@
  <li><a href="#SMART">SMART</a>
  <li><a href="#Module">Module</a>
  <li><a href="#AI cluster - brief workflow description">AI cluster - brief workflow description</a>
- <li><a href="How SMART works">How SMART works</a>
+ <li><a href="#How SMART works">How SMART works</a>
 <ul>
 </ul>
  
