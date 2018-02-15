@@ -60,8 +60,6 @@
 
 <p>Modules in SMART are algorithms for processing video, audio or text data. Each separate module is a dynamically loaded library with a standard interface.</p>
 
-<p>Modules in SMART are algorithms for processing video, audio or text data. Each separate module is a dynamically loaded library with a standard interface.</p>
-
 <h2>AI cluster - brief workflow description</h2>
 
 <li><p>From an external service, a command is sent to the MQ message queue to process video or photos.</p></li>
@@ -80,7 +78,7 @@
 <p>- After receiving the command for processing, Smart adds the request to the queue of the desired module.</p>
 <p>- Next, integration is carried out with the external service, all under the control of Load Balancing. It is then determined which of the SMART modules is ready to process the command at the moment.</p>
 
-<img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/smart.png"/>
+<img align="right" src="https://github.com/adhivetv/adhive.tv/blob/master/image/smart1.png"/>
 
 <p>Smart is executed in 3 main streams:</p>
 <li><p>Http - server</p></li>
