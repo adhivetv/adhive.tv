@@ -1,4 +1,10 @@
 # adhive.tv
+
+<ul>
+ <li><a href="#AI cluster - brief workflow description">AI cluster - brief workflow description</a>
+ <li><a href="#How SMART works">How SMART works</a>
+</ul>
+
 # <a name="AI cluster - brief workflow description"></a><h1>AI cluster - brief workflow description</h1>
 
 <ul>
