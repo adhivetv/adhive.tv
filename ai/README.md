@@ -1,12 +1,12 @@
 # adhive.tv
 
 <ul>
- <li><a href="#Distributed Multi-Layered AI Cluster Architecture">Distributed Multi-Layered AI Cluster Architecture</a>
  <li><a href="#RabbitMQ">RabbitMQ</a>
  <li><a href="#COMPFRAMEWORK">COMPFRAMEWORK</a> 
  <li><a href="#SMART-SENDER">SMART-SENDER</a>
  <li><a href="#SMART">SMART</a>
  <li><a href="#Module">Module</a>
+ <li><a href="#Distributed Multi-Layered AI Cluster Architecture">Distributed Multi-Layered AI Cluster Architecture</a>
 </ul>
  
 <a name="Distributed Multi-Layered AI Cluster Architecture"></a><h1>Distributed Multi-Layered AI Cluster Architecture</h1>
