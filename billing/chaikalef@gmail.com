@@ -1,6 +1,13 @@
 # Billing
 
-## Introduction
+ + [Introduction](#Introduction);
+ + [Requirements for the billing system](#Requirements);
+ + [Implementation architecture](#Implementation);
+ + [To a large extent, the grid is built on an IMDG solution](#IMDG);
+ + [The advantages of the chosen approach](#advantages);
+ + [Progress of implementation](#Progress);
+
+## <a name="Introduction"></a> Introduction
 
 Billing for systems with transfer of units from one user to another is a critical business system.
 
@@ -10,7 +17,7 @@ This innovation, combined with blockchain, allows abolishing unauthorized change
 
 The possibility of repeating the change operations that are stored in a separate structure guarantees the restoration of not only functional performance, but also the restoration of data in the event of almost any failures.
 
-## Requirements for the billing system.
+## <a name="Requirements"></a> Requirements for the billing system.
 
 As for any software for billing, there are functional and non-functional requirements.
 
@@ -41,7 +48,7 @@ Not functional requirements:
 + Ability of carrying out maintenance works without degrading basic billing functionality;
 + Lack of degradation of non-logarithmic nature at an increase in the number of records.
 
-## Implementation architecture
+## <a name="Implementation"></a> Implementation architecture
 
 To meet the requirements, the following billing implementation scheme was adopted.
 
@@ -61,7 +68,7 @@ Private external services – These include services for integration with servic
 All messages received from "external services" enter the security layer, which performs identification and authentication of the source of the message and authorization of the access initializer.
 In the case of correctness, messages associated with data changes are transmitted to the Historical Service, which stores messages to prevent loss of the message when the external system is running asynchronously. If the message is not related to data changes, it is transferred to the computational grid.
 
-## To a large extent, the grid is built on an IMDG solution.
+## <a name="IMDG"></a> To a large extent, the grid is built on an IMDG solution.
 
 Grid tasks:
 + Converting messages into an operation on the account, transferring it to the storage layer, and updating the internal cached aggregates;
@@ -74,7 +81,7 @@ To ensure the preservation of data, a storage layer is selected. It represents a
 
 To avoid degradation of the basic functionality, auxiliary structures for storing aggregates and indexes are provided at the level of the repositories. This allows the operation of the most important billing functional codes in the event of computational grid degradation.
 
-## The advantages of the chosen approach
+## <a name="advantages"></a> The advantages of the chosen approach
 
 The given implementation has a number of advantages:
 + Segment scalability - to increase performance or increase data capacity, only part of the system needs to be scaled;
@@ -84,7 +91,7 @@ The given implementation has a number of advantages:
 + Maintaining low response times under high strain thanks to the presence of hot data in memory;
 + The ability to prioritize operation queues over the storage structure.
 
-## Progress of implementation
+## <a name="Progress"></a> Progress of implementation
 
 To ensure the development of a Minimum value product, the following implementation strategy was chosen:
 + Implementation of rest-api + basic functions of the storage layer + administration panel;
