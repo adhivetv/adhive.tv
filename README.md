@@ -2,7 +2,6 @@
 
 <ul>
 <li><a href="https://github.com/adhivetv/adhive.tv">Background</a></li>
-<li><a href="https://github.com/adhivetv/smartcontract">vesting</a></li>
 <li><a href="https://github.com/adhivetv/adhive.tv/tree/master/taskmanager">Task Manager</a>
 <li><a href="https://github.com/adhivetv/adhive.tv/tree/master/billing">Billing</a>
 <li><a href="https://github.com/adhivetv/adhive.tv/tree/master/Payment">Payment</a>
