@@ -7,7 +7,7 @@ spring:
       config:
         server:
           git:
-            uri: https://adhiveconfig@bitbucket.org/budaev123/adh.cloud.config.git
+            uri: ${URI_GIT}
             searchPaths: '{application}/'
 eureka:
   password: password

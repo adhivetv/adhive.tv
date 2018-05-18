@@ -27,7 +27,7 @@ bootRepackage {
 }
 
 docker {
-    name "bild-dev-2.adhive.info:6001/${project.group}/${jar.baseName}"
+    name "${registryUrl}/${project.group}/${jar.baseName}"
     files jar.archivePath
     buildArgs([
             'JAR_FILE': "${jar.archiveName}",
