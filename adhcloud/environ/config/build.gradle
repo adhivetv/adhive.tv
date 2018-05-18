@@ -1,0 +1,37 @@
+group 'adh.cloud'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.palantir.docker'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE")
+        classpath('com.palantir.gradle.docker:gradle-docker:0.17.2')
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-config-server', version: '1.4.2.RELEASE'
+}
+
+bootRepackage {
+    mainClass = "tv.adhive.cloud.configurator.srv.ConfiguratorSrvApp"
+}
+
+docker {
+    name "bild-dev-2.adhive.info:6001/${project.group}/${jar.baseName}"
+    files jar.archivePath
+    buildArgs([
+            'JAR_FILE': "${jar.archiveName}",
+            'JMX_PORT': "9875"
+    ])
+}
+

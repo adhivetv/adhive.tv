@@ -1,0 +1,21 @@
+
+server:
+  port: 8761
+
+eureka:
+  password: password
+  client:
+    serviceUrl:
+      defaultZone: ${URLS_ANOTHER_INSTANSE_EUREKA}
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+spring:
+  application:
+    name: eureka
+  cloud:
+    config:
+      server:
+        bootstrap: true
+

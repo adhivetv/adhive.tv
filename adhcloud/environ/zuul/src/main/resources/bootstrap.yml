@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: zuul
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configurator-srv
+
+eureka:
+  password: password
+  client:
+    serviceUrl:
+      defaultZone: http://user:${eureka.password}@${EUREKA_HOST}:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ipAddress: ${IP_ADDRESS}
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
