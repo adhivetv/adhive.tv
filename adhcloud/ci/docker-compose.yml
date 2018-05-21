@@ -1,0 +1,52 @@
+version: '3.5'
+services:
+   teamcity-agent:
+        env_file:
+          .env
+        networks:
+            - cloud-network
+        privileged: true
+        expose:
+        image: ${TEAMCITY_AGENT_IMAGE}
+        links:
+            - teamcity-server:teamcity-server
+            - nexus-server:${NEXUS_SERVER}
+        volumes:
+          - /root/.gradle:/root/.gradle
+
+   teamcity-server:
+        restart: always
+        networks:
+            - cloud-network
+        expose:
+            - 8111
+        ports:
+            - 8111:8111
+        container_name: teamcity-server
+        image: jetbrains/teamcity-server
+        volumes:
+          - /stor/teamcity-srv/datadir:/data/teamcity_server/datadir
+          - /stor/teamcity-srv/logs:/opt/teamcity/logs
+
+   nexus-server:
+        restart: always
+        networks:
+             - cloud-network
+        expose:
+             - 8081
+             - 6001
+             - 6002
+             - 6003
+        ports:
+            - 8081:8081
+            - 6001:6001
+            - 6002:6002
+            - 6003:6003
+        container_name: nexus3
+        image: sonatype/nexus3
+        volumes:
+          - /stor/nexus-data/:/nexus-data/
+
+networks:
+    cloud-network:
+        driver: bridge
