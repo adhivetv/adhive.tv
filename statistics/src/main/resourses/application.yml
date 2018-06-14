@@ -1,0 +1,4 @@
+elasticsearch:
+  mapping:
+      path: 'classpath:mapping/'
+      types: someType1, someType2

@@ -1,0 +1,62 @@
+group 'adh.cloud'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+        classpath("com.palantir.gradle.docker:gradle-docker:0.17.2")
+    }
+}
+
+ext {
+    springCloudVersion = 'Dalston.SR5'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.cloud:spring-cloud-starter-feign")
+    compile("org.springframework:spring-context-support:4.3.13.RELEASE")
+    compile("net.java.dev.jna:jna:4.2.2")
+    compile("org.slf4j:slf4j-api:1.7.25")
+    compile("org.springframework.boot:spring-boot-starter-amqp")
+    compile("org.springframework.boot:spring-boot-starter-integration")
+    compile("org.springframework.integration:spring-integration-amqp")
+    compile("com.google.guava:guava:23.4-jre")
+    compile("commons-io:commons-io:2.6")
+    compile('com.fasterxml.jackson.core:jackson-core:2.9.3')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.9.3')
+    compile('com.fasterxml.jackson.core:jackson-annotations:2.9.3')
+    compile('org.elasticsearch:elasticsearch:6.1.0')
+    compile('org.elasticsearch.client:transport:6.1.0')
+    compile('org.elasticsearch.client:elasticsearch-rest-high-level-client:6.1.0')
+    compile('org.elasticsearch.plugin:transport-netty4-client:6.1.0')
+    compile('org.elasticsearch.client:elasticsearch-rest-client:6.1.0')
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile('io.github.openfeign:feign-jackson:9.5.0')
+
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+
+    compile group: 'net.sf.supercsv', name: 'super-csv', version: '2.4.0'
+    compile group: 'com.ibm.icu', name: 'icu4j', version: '61.1'
+    compile('org.jsoup:jsoup:1.11.2')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
